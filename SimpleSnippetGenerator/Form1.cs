@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using UtilityLibrary;
 
 namespace SimpleSnippetGenerator
 {
@@ -25,11 +26,11 @@ namespace SimpleSnippetGenerator
             inputRichTextBox.Clear();
             authorTextBox.Clear();
             titleTextBox.Clear();
-            descriptionRichTextBox1.Clear();
+            descriptionRichTextBox.Clear();
 
             //Setting default values
             fontSizeNumericUpDown.Value = 8;
-            setFontSize();
+            Utility.SetFontSize(fontSizeNumericUpDown, inputRichTextBox);
 
             //Setting default radioButtons to be checked
             insertSnippetRadioButton.Checked = true;
@@ -38,35 +39,12 @@ namespace SimpleSnippetGenerator
 
         private void fontSizeNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            setFontSize();
-        }
-
-        private void setFontSize()
-        {
-            float size = Convert.ToSingle(fontSizeNumericUpDown.Value);
-            Font myFont = new Font(inputRichTextBox.Font.Name, size);
-            inputRichTextBox.Font = myFont;
+            Utility.SetFontSize(fontSizeNumericUpDown, inputRichTextBox);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            XNamespace xn = "http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet";
-
-            XDocument xdoc = new XDocument(new XDeclaration("1.0", "utf-8", "yes"));
-            xdoc.Add(new XElement(xn + "CodeSnippets", new XAttribute("xmlns", "http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet"),
-                         new XElement("CodeSnippet", new XAttribute("Format", "1.0.0"),
-                         new XElement("Header",
-                             new XElement("Title", "value1"),
-                             new XElement("Shortcuts"),
-                             new XElement("Description", "desc"),
-                             new XElement("Author", "author"),
-                             new XElement("SnippetTypes",
-                                 new XElement("SnippetType", "tip"))),
-                         new XElement("Snippet",
-                             new XElement("Code", new XAttribute("Language", "XML"), "querry")))));
-
-            //Using only for testing
-            string test = xdoc.ToString();
+            string test = Utility.CreateXML(inputRichTextBox, descriptionRichTextBox, titleTextBox, authorTextBox);
         }
     }
 }

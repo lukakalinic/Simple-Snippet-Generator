@@ -40,7 +40,7 @@
             this.snippetDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.authorTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.descriptionRichTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.descriptionRichTextBox = new System.Windows.Forms.RichTextBox();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -165,7 +165,7 @@
             // 
             this.snippetDetailsGroupBox.Controls.Add(this.authorTextBox);
             this.snippetDetailsGroupBox.Controls.Add(this.label1);
-            this.snippetDetailsGroupBox.Controls.Add(this.descriptionRichTextBox1);
+            this.snippetDetailsGroupBox.Controls.Add(this.descriptionRichTextBox);
             this.snippetDetailsGroupBox.Controls.Add(this.descriptionLabel);
             this.snippetDetailsGroupBox.Controls.Add(this.titleTextBox);
             this.snippetDetailsGroupBox.Controls.Add(this.titleLabel);
@@ -194,14 +194,14 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Author";
             // 
-            // descriptionRichTextBox1
+            // descriptionRichTextBox
             // 
-            this.descriptionRichTextBox1.Location = new System.Drawing.Point(10, 91);
-            this.descriptionRichTextBox1.MaxLength = 150;
-            this.descriptionRichTextBox1.Name = "descriptionRichTextBox1";
-            this.descriptionRichTextBox1.Size = new System.Drawing.Size(160, 62);
-            this.descriptionRichTextBox1.TabIndex = 3;
-            this.descriptionRichTextBox1.Text = "";
+            this.descriptionRichTextBox.Location = new System.Drawing.Point(10, 91);
+            this.descriptionRichTextBox.MaxLength = 150;
+            this.descriptionRichTextBox.Name = "descriptionRichTextBox";
+            this.descriptionRichTextBox.Size = new System.Drawing.Size(160, 62);
+            this.descriptionRichTextBox.TabIndex = 3;
+            this.descriptionRichTextBox.Text = "";
             // 
             // descriptionLabel
             // 
@@ -271,7 +271,7 @@
         private System.Windows.Forms.GroupBox snippetDetailsGroupBox;
         private System.Windows.Forms.TextBox authorTextBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox descriptionRichTextBox1;
+        private System.Windows.Forms.RichTextBox descriptionRichTextBox;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.Label titleLabel;
