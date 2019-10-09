@@ -45,7 +45,7 @@ namespace SimpleSnippetGenerator
         private void saveButton_Click(object sender, EventArgs e)
         {
             saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = @"[A-Z]:\\Users\\[A-Z]+\\Desktop";
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
             saveFileDialog.Filter = "Snippet (*.snippet*)|*.snippet";
 
             string xml = Utility.CreateXML(inputRichTextBox, descriptionRichTextBox, titleTextBox, authorTextBox);
