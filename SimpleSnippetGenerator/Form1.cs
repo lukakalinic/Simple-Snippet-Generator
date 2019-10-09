@@ -44,7 +44,25 @@ namespace SimpleSnippetGenerator
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            string test = Utility.CreateXML(inputRichTextBox, descriptionRichTextBox, titleTextBox, authorTextBox);
+            saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = @"C:\";
+            saveFileDialog.Filter = "Snippet (*.snippet*)|*.snippet";
+
+            string xml = Utility.CreateXML(inputRichTextBox, descriptionRichTextBox, titleTextBox, authorTextBox);
+
+            //================= Ovde cemo eventualno (SINTAKSNO) da validiram unešeni upit =======================
+
+            DialogResult result = saveFileDialog.ShowDialog();
+            
+            if(result == DialogResult.OK)
+            {
+                Utility.SaveFile(saveFileDialog.FileName, xml);
+                MessageBox.Show("Successfuly created snippet!", "Success");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong!", "Fail");
+            }
         }
     }
 }

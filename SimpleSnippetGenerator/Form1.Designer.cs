@@ -44,6 +44,7 @@
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.fontSizeNumericUpDown)).BeginInit();
             this.snippetTypeGroupBox.SuspendLayout();
             this.snippetDetailsGroupBox.SuspendLayout();
@@ -275,6 +276,7 @@
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 
