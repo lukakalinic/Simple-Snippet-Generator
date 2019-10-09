@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.inputRichTextBox = new System.Windows.Forms.RichTextBox();
             this.insertHereLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
@@ -45,21 +44,11 @@
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.scintillaBox = new ScintillaNET.Scintilla();
             ((System.ComponentModel.ISupportInitialize)(this.fontSizeNumericUpDown)).BeginInit();
             this.snippetTypeGroupBox.SuspendLayout();
             this.snippetDetailsGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // inputRichTextBox
-            // 
-            this.inputRichTextBox.AcceptsTab = true;
-            this.inputRichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputRichTextBox.Location = new System.Drawing.Point(16, 32);
-            this.inputRichTextBox.Name = "inputRichTextBox";
-            this.inputRichTextBox.Size = new System.Drawing.Size(410, 397);
-            this.inputRichTextBox.TabIndex = 0;
-            this.inputRichTextBox.Text = "";
-            this.inputRichTextBox.ZoomFactor = 1.2F;
             // 
             // insertHereLabel
             // 
@@ -231,11 +220,19 @@
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Title";
             // 
+            // scintilla1
+            // 
+            this.scintillaBox.Location = new System.Drawing.Point(13, 33);
+            this.scintillaBox.Name = "scintillaBox";
+            this.scintillaBox.Size = new System.Drawing.Size(410, 396);
+            this.scintillaBox.TabIndex = 10;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.scintillaBox);
             this.Controls.Add(this.snippetDetailsGroupBox);
             this.Controls.Add(this.snippetTypeGroupBox);
             this.Controls.Add(this.fontLabel);
@@ -243,7 +240,6 @@
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.insertHereLabel);
-            this.Controls.Add(this.inputRichTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -259,8 +255,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox inputRichTextBox;
         private System.Windows.Forms.Label insertHereLabel;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button resetButton;
@@ -277,6 +271,7 @@
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private ScintillaNET.Scintilla scintillaBox;
     }
 }
 

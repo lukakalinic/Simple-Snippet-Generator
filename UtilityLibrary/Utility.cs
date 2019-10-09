@@ -7,19 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using ScintillaNET;
 
 namespace UtilityLibrary
 {
     public static class Utility
     {
-        public static void SetFontSize(NumericUpDown fontSizeNumericUpDown, RichTextBox inputRichTextBox)
-        {
-            float size = Convert.ToSingle(fontSizeNumericUpDown.Value);
-            Font myFont = new Font(inputRichTextBox.Font.Name, size);
-            inputRichTextBox.Font = myFont;
-        }
 
-        public static string CreateXML(RichTextBox inputRichTextBox, RichTextBox descriptionRichTextBox, TextBox titleTextBox, TextBox authorTextBox)
+        public static string CreateXML(Scintilla scintillaBox, RichTextBox descriptionRichTextBox, TextBox titleTextBox, TextBox authorTextBox)
         {
             XNamespace xn = "http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet";
 
@@ -35,7 +30,7 @@ namespace UtilityLibrary
                                    new XElement("SnippetTypes",
                                        new XElement("SnippetType", "tip"))),
                                new XElement("Snippet",
-                                   new XElement("Code", new XAttribute("Language", "XML"), new XCData(inputRichTextBox.Text))))));
+                                   new XElement("Code", new XAttribute("Language", "XML"), new XCData(scintillaBox.Text))))));
 
             var wr = new StringWriter();
             xdoc.Save(wr);

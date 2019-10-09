@@ -8,3 +8,11 @@ E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\UtilityLibrary.pdb
 E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.csproj.CoreCompileInputs.cache
 E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.dll
 E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.pdb
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\UtilityLibrary.dll
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\UtilityLibrary.pdb
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\ScintillaNET.dll
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\ScintillaNET.xml
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.csproj.CopyComplete
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.dll
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.pdb
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.csprojAssemblyReference.cache

@@ -24,3 +24,17 @@ E:\Github\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippe
 E:\Github\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.csproj.CopyComplete
 E:\Github\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.exe
 E:\Github\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.pdb
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.csprojAssemblyReference.cache
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.Form.resources
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.Properties.Resources.resources
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.csproj.GenerateResource.cache
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.exe
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.pdb
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\SimpleSnippetGenerator.exe.config
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\SimpleSnippetGenerator.exe
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\SimpleSnippetGenerator.pdb
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\ScintillaNET.dll
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\UtilityLibrary.dll
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\UtilityLibrary.pdb
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\ScintillaNET.xml
+C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.csproj.CopyComplete
