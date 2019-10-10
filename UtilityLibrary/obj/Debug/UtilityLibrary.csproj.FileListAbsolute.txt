@@ -18,5 +18,4 @@ C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\obj\Debug
 C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.csprojAssemblyReference.cache
 E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\ScintillaNET.dll
 E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\ScintillaNET.xml
-E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.csprojAssemblyReference.cache
 E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.csproj.CopyComplete

@@ -44,7 +44,7 @@ namespace SimpleSnippetGenerator
 
 
             //Setting default radioButtons to be checked
-            insertSnippetRadioButton.Checked = true;
+            expansionSnippetRadioButton.Checked = true;
             surroundWithRadioButton.Checked = false;
         }
 
@@ -60,7 +60,7 @@ namespace SimpleSnippetGenerator
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(System.Environment.SpecialFolder.Desktop);
             saveFileDialog.Filter = "Snippet (*.snippet*)|*.snippet";
 
-            string xml = Utility.CreateXML(scintillaBox, descriptionRichTextBox, titleTextBox, authorTextBox);
+            string xml = Utility.CreateXML(scintillaBox, descriptionRichTextBox, titleTextBox, authorTextBox, expansionSnippetRadioButton, surroundWithRadioButton);
 
             //================= Ovde cemo eventualno (SINTAKSNO) da validiram unešeni upit =======================
 

@@ -31,7 +31,7 @@
             this.insertHereLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
-            this.insertSnippetRadioButton = new System.Windows.Forms.RadioButton();
+            this.expansionSnippetRadioButton = new System.Windows.Forms.RadioButton();
             this.surroundWithRadioButton = new System.Windows.Forms.RadioButton();
             this.fontSizeNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.fontLabel = new System.Windows.Forms.Label();
@@ -86,26 +86,26 @@
             this.resetButton.UseVisualStyleBackColor = false;
             this.resetButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
-            // insertSnippetRadioButton
+            // expansionSnippetRadioButton
             // 
-            this.insertSnippetRadioButton.AutoSize = true;
-            this.insertSnippetRadioButton.Checked = true;
-            this.insertSnippetRadioButton.Location = new System.Drawing.Point(6, 19);
-            this.insertSnippetRadioButton.Name = "insertSnippetRadioButton";
-            this.insertSnippetRadioButton.Size = new System.Drawing.Size(99, 17);
-            this.insertSnippetRadioButton.TabIndex = 4;
-            this.insertSnippetRadioButton.TabStop = true;
-            this.insertSnippetRadioButton.Text = "Insert Snippet...";
-            this.insertSnippetRadioButton.UseVisualStyleBackColor = true;
+            this.expansionSnippetRadioButton.AutoSize = true;
+            this.expansionSnippetRadioButton.Checked = true;
+            this.expansionSnippetRadioButton.Location = new System.Drawing.Point(6, 19);
+            this.expansionSnippetRadioButton.Name = "expansionSnippetRadioButton";
+            this.expansionSnippetRadioButton.Size = new System.Drawing.Size(74, 17);
+            this.expansionSnippetRadioButton.TabIndex = 4;
+            this.expansionSnippetRadioButton.TabStop = true;
+            this.expansionSnippetRadioButton.Text = "Expansion";
+            this.expansionSnippetRadioButton.UseVisualStyleBackColor = true;
             // 
             // surroundWithRadioButton
             // 
             this.surroundWithRadioButton.AutoSize = true;
             this.surroundWithRadioButton.Location = new System.Drawing.Point(6, 42);
             this.surroundWithRadioButton.Name = "surroundWithRadioButton";
-            this.surroundWithRadioButton.Size = new System.Drawing.Size(93, 17);
+            this.surroundWithRadioButton.Size = new System.Drawing.Size(95, 17);
             this.surroundWithRadioButton.TabIndex = 5;
-            this.surroundWithRadioButton.Text = "Surround With";
+            this.surroundWithRadioButton.Text = "SurroundsWith";
             this.surroundWithRadioButton.UseVisualStyleBackColor = true;
             // 
             // fontSizeNumericUpDown
@@ -142,7 +142,7 @@
             // 
             // snippetTypeGroupBox
             // 
-            this.snippetTypeGroupBox.Controls.Add(this.insertSnippetRadioButton);
+            this.snippetTypeGroupBox.Controls.Add(this.expansionSnippetRadioButton);
             this.snippetTypeGroupBox.Controls.Add(this.surroundWithRadioButton);
             this.snippetTypeGroupBox.Location = new System.Drawing.Point(494, 32);
             this.snippetTypeGroupBox.Name = "snippetTypeGroupBox";
@@ -260,7 +260,7 @@
         private System.Windows.Forms.Label insertHereLabel;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button resetButton;
-        private System.Windows.Forms.RadioButton insertSnippetRadioButton;
+        private System.Windows.Forms.RadioButton expansionSnippetRadioButton;
         private System.Windows.Forms.RadioButton surroundWithRadioButton;
         private System.Windows.Forms.NumericUpDown fontSizeNumericUpDown;
         private System.Windows.Forms.Label fontLabel;

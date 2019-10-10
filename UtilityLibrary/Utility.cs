@@ -14,7 +14,7 @@ namespace UtilityLibrary
     public static class Utility
     {
 
-        public static string CreateXML(Scintilla scintillaBox, RichTextBox descriptionRichTextBox, TextBox titleTextBox, TextBox authorTextBox)
+        public static string CreateXML(Scintilla scintillaBox, RichTextBox descriptionRichTextBox, TextBox titleTextBox, TextBox authorTextBox, RadioButton expansionSnippetRadioButton, RadioButton surroundWithRadioButton)
         {
             XNamespace xn = "http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet";
 
@@ -28,7 +28,7 @@ namespace UtilityLibrary
                                    new XElement("Description", descriptionRichTextBox.Text),
                                    new XElement("Author", authorTextBox.Text),
                                    new XElement("SnippetTypes",
-                                       new XElement("SnippetType", "tip"))),
+                                       new XElement("SnippetType", expansionSnippetRadioButton.Checked ? expansionSnippetRadioButton.Text : surroundWithRadioButton.Text))),
                                new XElement("Snippet",
                                    new XElement("Code", new XAttribute("Language", "XML"), new XCData(scintillaBox.Text))))));
 
