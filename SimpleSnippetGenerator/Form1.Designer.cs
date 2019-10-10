@@ -220,12 +220,14 @@
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "Title";
             // 
-            // scintilla1
+            // scintillaBox
             // 
             this.scintillaBox.Location = new System.Drawing.Point(13, 33);
             this.scintillaBox.Name = "scintillaBox";
+            this.scintillaBox.ScrollWidth = 1;
             this.scintillaBox.Size = new System.Drawing.Size(410, 396);
             this.scintillaBox.TabIndex = 10;
+            this.scintillaBox.TextChanged += new System.EventHandler(this.scintillaBox_TextChanged);
             // 
             // Form
             // 

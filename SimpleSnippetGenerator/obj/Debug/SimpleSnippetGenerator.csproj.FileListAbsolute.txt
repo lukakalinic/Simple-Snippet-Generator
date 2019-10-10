@@ -38,3 +38,5 @@ C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\b
 C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\UtilityLibrary.pdb
 C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\ScintillaNET.xml
 C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\SimpleSnippetGenerator\obj\Debug\SimpleSnippetGenerator.csproj.CopyComplete
+E:\Github\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\ScintillaNET.dll
+E:\Github\Simple-Snippet-Generator\SimpleSnippetGenerator\bin\Debug\ScintillaNET.xml

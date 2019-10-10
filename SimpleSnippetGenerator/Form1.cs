@@ -15,6 +15,9 @@ namespace SimpleSnippetGenerator
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        #region Fields
+        private int maxLineNumberCharLength;
+        #endregion
 
         public Form()
         {
@@ -24,12 +27,13 @@ namespace SimpleSnippetGenerator
         }
 
 
+        #region Events
 
-        
         private void clearButton_Click(object sender, EventArgs e)
         {
             //Reseting all
             scintillaBox.Text = "";
+            scintillaBox.ScrollWidth = 1;
             authorTextBox.Clear();
             titleTextBox.Clear();
             descriptionRichTextBox.Clear();
@@ -61,8 +65,8 @@ namespace SimpleSnippetGenerator
             //================= Ovde cemo eventualno (SINTAKSNO) da validiram unešeni upit =======================
 
             DialogResult result = saveFileDialog.ShowDialog();
-            
-            if(result == DialogResult.OK)
+
+            if (result == DialogResult.OK)
             {
                 Utility.SaveFile(saveFileDialog.FileName, xml);
                 MessageBox.Show("Successfuly created snippet!", "Success");
@@ -73,8 +77,19 @@ namespace SimpleSnippetGenerator
             }
         }
 
+        private void scintillaBox_TextChanged(object sender, EventArgs e)
+        {
+            var maxLineNumberCharLength = scintillaBox.Lines.Count.ToString().Length;
+            if (maxLineNumberCharLength == this.maxLineNumberCharLength)
+                return;
 
+            const int padding = 1;
+            scintillaBox.Margins[0].Width = scintillaBox.TextWidth(Style.LineNumber, new string('9', maxLineNumberCharLength + 1)) + padding;
+            this.maxLineNumberCharLength = maxLineNumberCharLength;
+        }
 
+        #endregion
+        
         private void InitSyntaxFormatting(float fontSize)
         {
             // Configure the default style
@@ -111,6 +126,5 @@ namespace SimpleSnippetGenerator
         {
             return Color.FromArgb(255, (byte)(rgb >> 16), (byte)(rgb >> 8), (byte)rgb);
         }
-
     }
 }
