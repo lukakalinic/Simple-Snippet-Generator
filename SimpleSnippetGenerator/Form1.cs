@@ -17,12 +17,20 @@ namespace SimpleSnippetGenerator
     {
         #region Fields
         private int maxLineNumberCharLength;
+        const int padding = 2;
         #endregion
 
         public Form()
         {
             InitializeComponent();
+
+            foreach (var margin in scintillaBox.Margins)
+            {
+                margin.Width = 0;
+            }
+
             fontSizeNumericUpDown.Value = Convert.ToDecimal(scintillaBox.Font.Size);
+            maxLineNumberCharLength = scintillaBox.Lines.Count.ToString().Length;
             InitSyntaxFormatting(8);
         }
 
@@ -41,17 +49,10 @@ namespace SimpleSnippetGenerator
             //Setting default values
             fontSizeNumericUpDown.Value = 8;
             InitSyntaxFormatting(8);
-
-
+            
             //Setting default radioButtons to be checked
             expansionSnippetRadioButton.Checked = true;
             surroundWithRadioButton.Checked = false;
-        }
-
-        private void fontSizeNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-            float size = Convert.ToSingle(fontSizeNumericUpDown.Value);
-            InitSyntaxFormatting(size);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -79,17 +80,22 @@ namespace SimpleSnippetGenerator
 
         private void scintillaBox_TextChanged(object sender, EventArgs e)
         {
-            var maxLineNumberCharLength = scintillaBox.Lines.Count.ToString().Length;
-            if (maxLineNumberCharLength == this.maxLineNumberCharLength)
-                return;
+            if (lineNumberCheckBox.Checked)
+            {
+                showLineNumbers(scintillaBox);
+            }
+        }
 
-            const int padding = 1;
-            scintillaBox.Margins[0].Width = scintillaBox.TextWidth(Style.LineNumber, new string('9', maxLineNumberCharLength + 1)) + padding;
-            this.maxLineNumberCharLength = maxLineNumberCharLength;
+        private void fontSizeNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            float size = Convert.ToSingle(fontSizeNumericUpDown.Value);
+            InitSyntaxFormatting(size);
         }
 
         #endregion
-        
+
+        #region Methods for Scintilla
+
         private void InitSyntaxFormatting(float fontSize)
         {
             // Configure the default style
@@ -122,9 +128,36 @@ namespace SimpleSnippetGenerator
             scintillaBox.SetKeywords(1, "void Null ArgumentError arguments Array Boolean Class Date DefinitionError Error EvalError Function int Math Namespace Number Object RangeError ReferenceError RegExp SecurityError String SyntaxError TypeError uint XML XMLList Boolean Byte Char DateTime Decimal Double Int16 Int32 Int64 IntPtr SByte Single UInt16 UInt32 UInt64 UIntPtr Void Path File System Windows Forms ScintillaNET");
         }
 
+        private void lineNumberCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lineNumberCheckBox.Checked)
+            {
+                scintillaBox.Margins[0].Width = scintillaBox.TextWidth(Style.LineNumber, new string('9', maxLineNumberCharLength + 1)) + padding;
+            }
+            else
+            {
+                foreach (var margin in scintillaBox.Margins)
+                {
+                    margin.Width = 0;
+                }
+            }
+        }
+
+        private void showLineNumbers(Scintilla scintillaBox)
+        {
+            var maxLineNumberCharLength = scintillaBox.Lines.Count.ToString().Length;
+            if (maxLineNumberCharLength == this.maxLineNumberCharLength)
+                return;
+
+            scintillaBox.Margins[0].Width = scintillaBox.TextWidth(Style.LineNumber, new string('9', maxLineNumberCharLength + 1)) + padding;
+            this.maxLineNumberCharLength = maxLineNumberCharLength;
+        }
+
         public static Color IntToColor(int rgb)
         {
             return Color.FromArgb(255, (byte)(rgb >> 16), (byte)(rgb >> 8), (byte)rgb);
         }
+
+        #endregion
     }
 }
