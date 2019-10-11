@@ -56,7 +56,7 @@ namespace SimpleSnippetGenerator
 
             //Reset state of Scintilla to default state
             maxLineNumberCharLength = scintillaBox.Lines.Count.ToString().Length;
-            scintillaBox.Margins[0].Width = scintillaBox.TextWidth(Style.LineNumber, new string('9', maxLineNumberCharLength + 1)) + padding;
+            textWidthUpdate(scintillaBox, lineNumberCheckBox, "clearButton_Click");
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -84,39 +84,20 @@ namespace SimpleSnippetGenerator
 
         private void scintillaBox_TextChanged(object sender, EventArgs e)
         {
-            if (lineNumberCheckBox.Checked)
-            {
-                showLineNumbers(scintillaBox);
-            }
-            else
-            {
-                //Ovo ovde je obavezno jer npr ako je checkBox unchecked,
-                //svaku novu liniju koju unesem, ako br. linija predje 10, onda 
-                //ce desetku da mi ispise malo odsecenu tj nece upasti u marginu kako treba.
-                //Zato uvek azuriram sirinu margine, iako je ne ispisujem.
-                maxLineNumberCharLength = scintillaBox.Lines.Count.ToString().Length;
-            }
+            textWidthUpdate(scintillaBox, lineNumberCheckBox, "scintillaBox_TextChanged");
         }
 
         private void fontSizeNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
             float size = Convert.ToSingle(fontSizeNumericUpDown.Value);
             InitSyntaxFormatting(size);
+
+            textWidthUpdate(scintillaBox, lineNumberCheckBox, "fontSizeNumericUpDown_ValueChanged");
         }
 
         private void lineNumberCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (lineNumberCheckBox.Checked)
-            {
-                scintillaBox.Margins[0].Width = scintillaBox.TextWidth(Style.LineNumber, new string('9', maxLineNumberCharLength + 1)) + padding;
-            }
-            else
-            {
-                foreach (var margin in scintillaBox.Margins)
-                {
-                    margin.Width = 0;
-                }
-            }
+            textWidthUpdate(scintillaBox, lineNumberCheckBox, "lineNumberCheckBox_CheckedChanged");
         }
 
         #endregion
@@ -169,5 +150,60 @@ namespace SimpleSnippetGenerator
         }
 
         #endregion
+
+        private void textWidthUpdate(Scintilla scintillaBox, CheckBox lineNumberCheckBox, string methodName)
+        {
+            switch (methodName)
+            {
+                case "fontSizeNumericUpDown_ValueChanged":
+                    //I ovde moze da bude problem sa prikazivanjem broja,
+                    //Kada se uveca font, desi se da brojevi iskoce van margine!
+                    if (lineNumberCheckBox.Checked)
+                    {
+                        scintillaBox.Margins[0].Width = scintillaBox.TextWidth(Style.LineNumber, new string('9', maxLineNumberCharLength + 1)) + padding;
+                    }
+
+                    break;
+                case "scintillaBox_TextChanged":
+                    if (lineNumberCheckBox.Checked)
+                    {
+                        showLineNumbers(scintillaBox);
+                    }
+                    else
+                    {
+                        //Ovo ovde je obavezno jer npr ako je checkBox unchecked,
+                        //svaku novu liniju koju unesem, ako br. linija predje 10, onda 
+                        //ce desetku da mi ispise malo odsecenu tj nece upasti u marginu kako treba.
+                        //Zato uvek azuriram sirinu margine, iako je ne ispisujem.
+                        maxLineNumberCharLength = scintillaBox.Lines.Count.ToString().Length;
+                    }
+
+                    break;
+                case "lineNumberCheckBox_CheckedChanged":
+                    if (lineNumberCheckBox.Checked)
+                    {
+                        scintillaBox.Margins[0].Width = scintillaBox.TextWidth(Style.LineNumber, new string('9', maxLineNumberCharLength + 1)) + padding;
+                    }
+                    else
+                    {
+                        foreach (var margin in scintillaBox.Margins)
+                        {
+                            margin.Width = 0;
+                        }
+                    }
+
+                    break;
+
+                case "clearButton_Click":
+                    if (lineNumberCheckBox.Checked)
+                    {
+                        scintillaBox.Margins[0].Width = scintillaBox.TextWidth(Style.LineNumber, new string('9', maxLineNumberCharLength + 1)) + padding;
+                    }
+
+                    break;
+                default:
+                    throw new Exception("Wrong signal!");
+            }
+        }
     }
 }
