@@ -3,11 +3,6 @@ E:\SimpleSnippetGenerator\SimpleSnippetGenerator\UtilityLibrary\bin\Debug\Utilit
 E:\SimpleSnippetGenerator\SimpleSnippetGenerator\UtilityLibrary\obj\Debug\UtilityLibrary.csproj.CoreCompileInputs.cache
 E:\SimpleSnippetGenerator\SimpleSnippetGenerator\UtilityLibrary\obj\Debug\UtilityLibrary.dll
 E:\SimpleSnippetGenerator\SimpleSnippetGenerator\UtilityLibrary\obj\Debug\UtilityLibrary.pdb
-E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\UtilityLibrary.dll
-E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\UtilityLibrary.pdb
-E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.csproj.CoreCompileInputs.cache
-E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.dll
-E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.pdb
 C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\UtilityLibrary.dll
 C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\UtilityLibrary.pdb
 C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\ScintillaNET.dll
@@ -16,6 +11,11 @@ C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\obj\Debug
 C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.dll
 C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.pdb
 C:\Users\Cane\Documents\GitHub\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.csprojAssemblyReference.cache
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\UtilityLibrary.dll
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\UtilityLibrary.pdb
 E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\ScintillaNET.dll
 E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Debug\ScintillaNET.xml
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.csproj.CoreCompileInputs.cache
 E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.csproj.CopyComplete
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.dll
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Debug\UtilityLibrary.pdb
