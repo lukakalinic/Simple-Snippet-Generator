@@ -105,34 +105,39 @@ namespace SimpleSnippetGenerator
 
         private void InitSyntaxFormatting()
         {
-            // Configure the default style
+            // Reset the styles
             scintillaBox.StyleResetDefault();
-            scintillaBox.Styles[Style.Default].Font = "Consolas";
-            scintillaBox.Styles[Style.Default].SizeF = Convert.ToSingle(fontSizeNumericUpDown.Value);
+            scintillaBox.Styles[Style.Default].Font = "Courier New";
+            scintillaBox.Styles[Style.Default].Size = Convert.ToInt32(fontSizeNumericUpDown.Value);
             scintillaBox.StyleClearAll();
 
-            // Setting selection background color
-            scintillaBox.SetSelectionBackColor(true, IntToColor(0xFFAAFF));
-
-            // Configure the CPP (C#) lexer styles
-            scintillaBox.Styles[Style.Sql.Default].ForeColor = Color.Silver;
-            scintillaBox.Styles[Style.Sql.Comment].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            scintillaBox.Styles[Style.Sql.CommentLine].ForeColor = Color.FromArgb(0, 128, 0); // Green
-            scintillaBox.Styles[Style.Sql.CommentLineDoc].ForeColor = Color.FromArgb(128, 128, 128); // Gray
-            scintillaBox.Styles[Style.Sql.Number].ForeColor = Color.Olive;
-            scintillaBox.Styles[Style.Sql.Word].ForeColor = Color.Blue;
-            scintillaBox.Styles[Style.Sql.Word2].ForeColor = Color.Blue;
-            scintillaBox.Styles[Style.Sql.String].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaBox.Styles[Style.Sql.Character].ForeColor = Color.FromArgb(163, 21, 21); // Red
-            scintillaBox.Styles[Style.Sql.Operator].ForeColor = Color.Purple;
-            
-
+            // Set the SQL Lexer
             scintillaBox.Lexer = Lexer.Sql;
 
-            scintillaBox.SetKeywords(0, "add constraint alter column and any as asc backup database between case check " +
-                "create index replace view procedure unique default delete desc distinct drop exec exists foreign key " +
-                "from full outer join group by having in inner insert into select is left like limit not or " +
-                "order primary right rownum top set table truncate union all update values where null");
+            // Set the Styles
+            scintillaBox.Styles[Style.LineNumber].ForeColor = Color.FromArgb(255, 128, 128, 128);  //Dark Gray
+            scintillaBox.Styles[Style.LineNumber].BackColor = Color.FromArgb(255, 228, 228, 228);  //Light Gray
+            scintillaBox.Styles[Style.Sql.Comment].ForeColor = Color.Green;
+            scintillaBox.Styles[Style.Sql.CommentLine].ForeColor = Color.Green;
+            scintillaBox.Styles[Style.Sql.CommentLineDoc].ForeColor = Color.Green;
+            scintillaBox.Styles[Style.Sql.Number].ForeColor = Color.Maroon;
+            scintillaBox.Styles[Style.Sql.Word].ForeColor = Color.Blue;
+            scintillaBox.Styles[Style.Sql.Word2].ForeColor = Color.Fuchsia;
+            scintillaBox.Styles[Style.Sql.User1].ForeColor = Color.Gray;
+            scintillaBox.Styles[Style.Sql.User2].ForeColor = Color.FromArgb(255, 00, 128, 192);    //Medium Blue-Green
+            scintillaBox.Styles[Style.Sql.String].ForeColor = Color.Red;
+            scintillaBox.Styles[Style.Sql.Character].ForeColor = Color.Red;
+            scintillaBox.Styles[Style.Sql.Operator].ForeColor = Color.Black;
+
+            // Set keyword lists
+            // Word = 0
+            scintillaBox.SetKeywords(0, @"add alter as authorization backup begin bigint binary bit break browse bulk by cascade case catch check checkpoint close clustered column commit compute constraint containstable continue create current cursor cursor database date datetime datetime2 datetimeoffset dbcc deallocate decimal declare default delete deny desc disk distinct distributed double drop dump else end errlvl escape except exec execute exit external fetch file fillfactor float for foreign freetext freetexttable from full function goto grant group having hierarchyid holdlock identity identity_insert identitycol if image index insert int intersect into key kill lineno load merge money national nchar nocheck nocount nolock nonclustered ntext numeric nvarchar of off offsets on open opendatasource openquery openrowset openxml option order over percent plan precision primary print proc procedure public raiserror read readtext real reconfigure references replication restore restrict return revert revoke rollback rowcount rowguidcol rule save schema securityaudit select set setuser shutdown smalldatetime smallint smallmoney sql_variant statistics table table tablesample text textsize then time timestamp tinyint to top tran transaction trigger truncate try union unique uniqueidentifier update updatetext use user values varbinary varchar varying view waitfor when where while with writetext xml go ");
+            // Word2 = 1
+            scintillaBox.SetKeywords(1, @"ascii cast char charindex ceiling coalesce collate contains convert current_date current_time current_timestamp current_user floor isnull max min nullif object_id session_user substring system_user tsequal ");
+            // User1 = 4
+            scintillaBox.SetKeywords(4, @"all and any between cross exists in inner is join left like not null or outer pivot right some unpivot ( ) * ");
+            // User2 = 5
+            scintillaBox.SetKeywords(5, @"sys objects sysobjects ");
         }
 
         private void showLineNumbers(Scintilla scintillaBox)
