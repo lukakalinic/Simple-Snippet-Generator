@@ -31,7 +31,7 @@ namespace SimpleSnippetGenerator
 
             fontSizeNumericUpDown.Value = Convert.ToDecimal(scintillaBox.Font.Size);
             maxLineNumberCharLength = scintillaBox.Lines.Count.ToString().Length;
-            InitSyntaxFormatting(8);
+            InitSyntaxFormatting();
         }
 
 
@@ -48,7 +48,7 @@ namespace SimpleSnippetGenerator
 
             //Setting default values
             fontSizeNumericUpDown.Value = 8;
-            InitSyntaxFormatting(8);
+            InitSyntaxFormatting();
             
             //Setting default radioButtons to be checked
             expansionSnippetRadioButton.Checked = true;
@@ -89,8 +89,7 @@ namespace SimpleSnippetGenerator
 
         private void fontSizeNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            float size = Convert.ToSingle(fontSizeNumericUpDown.Value);
-            InitSyntaxFormatting(size);
+            InitSyntaxFormatting();
 
             textWidthUpdate(scintillaBox, lineNumberCheckBox, "fontSizeNumericUpDown_ValueChanged");
         }
@@ -104,16 +103,16 @@ namespace SimpleSnippetGenerator
 
         #region Methods for Scintilla
 
-        private void InitSyntaxFormatting(float fontSize)
+        private void InitSyntaxFormatting()
         {
             // Configure the default style
             scintillaBox.StyleResetDefault();
             scintillaBox.Styles[Style.Default].Font = "Consolas";
-            scintillaBox.Styles[Style.Default].SizeF = fontSize;
+            scintillaBox.Styles[Style.Default].SizeF = Convert.ToSingle(fontSizeNumericUpDown.Value);
             scintillaBox.StyleClearAll();
 
             // Setting selection background color
-            scintillaBox.SetSelectionBackColor(true, IntToColor(0x114D9C));
+            scintillaBox.SetSelectionBackColor(true, IntToColor(0xFFAAFF));
 
             // Configure the CPP (C#) lexer styles
             scintillaBox.Styles[Style.Sql.Default].ForeColor = Color.Silver;
@@ -130,8 +129,10 @@ namespace SimpleSnippetGenerator
 
             scintillaBox.Lexer = Lexer.Sql;
 
-            scintillaBox.SetKeywords(0, "class extends implements import interface new case do while else if for in switch throw get set function var try catch finally while with default break continue delete return each const namespace package include use is as instanceof typeof author copy default deprecated eventType example exampleText exception haxe inheritDoc internal link mtasc mxmlc param private return see serial serialData serialField since throws usage version langversion playerversion productversion dynamic private public partial static intrinsic internal native override protected AS3 final super this arguments null Infinity NaN undefined true false abstract as base bool break by byte case catch char checked class const continue decimal default delegate do double descending explicit event extern else enum false finally fixed float for foreach from goto group if implicit in int interface internal into is lock long new null namespace object operator out override orderby params private protected public readonly ref return switch struct sbyte sealed short sizeof stackalloc static string select this throw true try typeof uint ulong unchecked unsafe ushort using var virtual volatile void while where yield");
-            scintillaBox.SetKeywords(1, "void Null ArgumentError arguments Array Boolean Class Date DefinitionError Error EvalError Function int Math Namespace Number Object RangeError ReferenceError RegExp SecurityError String SyntaxError TypeError uint XML XMLList Boolean Byte Char DateTime Decimal Double Int16 Int32 Int64 IntPtr SByte Single UInt16 UInt32 UInt64 UIntPtr Void Path File System Windows Forms ScintillaNET");
+            scintillaBox.SetKeywords(0, "add constraint alter column and any as asc backup database between case check " +
+                "create index replace view procedure unique default delete desc distinct drop exec exists foreign key " +
+                "from full outer join group by having in inner insert into select is left like limit not or " +
+                "order primary right rownum top set table truncate union all update values where null");
         }
 
         private void showLineNumbers(Scintilla scintillaBox)
