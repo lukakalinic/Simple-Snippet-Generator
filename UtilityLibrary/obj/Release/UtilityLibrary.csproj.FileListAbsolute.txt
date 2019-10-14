@@ -1,0 +1,8 @@
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Release\UtilityLibrary.dll
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Release\UtilityLibrary.pdb
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Release\ScintillaNET.dll
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\bin\Release\ScintillaNET.xml
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Release\UtilityLibrary.csproj.CoreCompileInputs.cache
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Release\UtilityLibrary.csproj.CopyComplete
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Release\UtilityLibrary.dll
+E:\Github\Simple-Snippet-Generator\UtilityLibrary\obj\Release\UtilityLibrary.pdb
