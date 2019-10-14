@@ -201,6 +201,7 @@ namespace SimpleSnippetGenerator
             this.scintillaBox.ScrollWidth = 1;
             this.scintillaBox.Size = new System.Drawing.Size(410, 396);
             this.scintillaBox.TabIndex = 10;
+            this.scintillaBox.UpdateUI += new System.EventHandler<ScintillaNET.UpdateUIEventArgs>(this.scintillaBox_UpdateUI);
             this.scintillaBox.TextChanged += new System.EventHandler(this.scintillaBox_TextChanged);
             // 
             // optionsGroupBox
@@ -274,6 +275,7 @@ namespace SimpleSnippetGenerator
             this.Name = "Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simple snippet creator for SQLServer";
+            this.Load += new System.EventHandler(this.Form_Load);
             this.snippetTypeGroupBox.ResumeLayout(false);
             this.snippetTypeGroupBox.PerformLayout();
             this.snippetDetailsGroupBox.ResumeLayout(false);

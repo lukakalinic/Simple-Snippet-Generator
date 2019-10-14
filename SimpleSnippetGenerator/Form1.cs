@@ -18,6 +18,7 @@ namespace SimpleSnippetGenerator
         #region Fields
         private int maxLineNumberCharLength;
         private const int padding = 2;
+        private int lastCaretPos = 0;
         #endregion
 
         public Form()
@@ -97,6 +98,54 @@ namespace SimpleSnippetGenerator
         private void lineNumberCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             textWidthUpdate(scintillaBox, lineNumberCheckBox, "lineNumberCheckBox_CheckedChanged");
+        }
+
+        private void scintillaBox_UpdateUI(object sender, UpdateUIEventArgs e)
+        {
+            // Has the caret changed position?
+            var caretPos = scintillaBox.CurrentPosition;
+            if (lastCaretPos != caretPos)
+            {
+                lastCaretPos = caretPos;
+                var bracePos1 = -1;
+                var bracePos2 = -1;
+
+                // Is there a brace to the left or right?
+                if (caretPos > 0 && Utility.IsBrace(scintillaBox.GetCharAt(caretPos - 1)))
+                    bracePos1 = (caretPos - 1);
+                else if (Utility.IsBrace(scintillaBox.GetCharAt(caretPos)))
+                    bracePos1 = caretPos;
+
+                if (bracePos1 >= 0)
+                {
+                    // Find the matching brace
+                    bracePos2 = scintillaBox.BraceMatch(bracePos1);
+                    if (bracePos2 == Scintilla.InvalidPosition)
+                    {
+                        scintillaBox.BraceBadLight(bracePos1);
+                        scintillaBox.HighlightGuide = 0;
+                    }
+                    else
+                    {
+                        scintillaBox.BraceHighlight(bracePos1, bracePos2);
+                        scintillaBox.HighlightGuide = scintillaBox.GetColumn(bracePos1);
+                    }
+                }
+                else
+                {
+                    // Turn off brace matching
+                    scintillaBox.BraceHighlight(Scintilla.InvalidPosition, Scintilla.InvalidPosition);
+                    scintillaBox.HighlightGuide = 0;
+                }
+            }
+        }
+
+        private void Form_Load(object sender, EventArgs e)
+        {
+            scintillaBox.IndentationGuides = IndentView.LookBoth;
+            scintillaBox.Styles[Style.BraceLight].BackColor = Color.LightGray;
+            scintillaBox.Styles[Style.BraceLight].ForeColor = Color.BlueViolet;
+            scintillaBox.Styles[Style.BraceBad].ForeColor = Color.Red;
         }
 
         #endregion
