@@ -30,6 +30,8 @@ namespace SimpleSnippetGenerator
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.insertHereLabel = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
             this.resetButton = new System.Windows.Forms.Button();
@@ -38,7 +40,7 @@ namespace SimpleSnippetGenerator
             this.snippetTypeGroupBox = new System.Windows.Forms.GroupBox();
             this.snippetDetailsGroupBox = new System.Windows.Forms.GroupBox();
             this.authorTextBox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.authorLabel = new System.Windows.Forms.Label();
             this.descriptionRichTextBox = new System.Windows.Forms.RichTextBox();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.titleTextBox = new System.Windows.Forms.TextBox();
@@ -49,6 +51,7 @@ namespace SimpleSnippetGenerator
             this.lineNumberCheckBox = new System.Windows.Forms.CheckBox();
             this.fontLabel = new System.Windows.Forms.Label();
             this.fontSizeNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.snippetTypeGroupBox.SuspendLayout();
             this.snippetDetailsGroupBox.SuspendLayout();
             this.optionsGroupBox.SuspendLayout();
@@ -127,7 +130,7 @@ namespace SimpleSnippetGenerator
             // snippetDetailsGroupBox
             // 
             this.snippetDetailsGroupBox.Controls.Add(this.authorTextBox);
-            this.snippetDetailsGroupBox.Controls.Add(this.label1);
+            this.snippetDetailsGroupBox.Controls.Add(this.authorLabel);
             this.snippetDetailsGroupBox.Controls.Add(this.descriptionRichTextBox);
             this.snippetDetailsGroupBox.Controls.Add(this.descriptionLabel);
             this.snippetDetailsGroupBox.Controls.Add(this.titleTextBox);
@@ -148,14 +151,14 @@ namespace SimpleSnippetGenerator
             this.authorTextBox.Size = new System.Drawing.Size(160, 35);
             this.authorTextBox.TabIndex = 5;
             // 
-            // label1
+            // authorLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 155);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Author";
+            this.authorLabel.AutoSize = true;
+            this.authorLabel.Location = new System.Drawing.Point(7, 155);
+            this.authorLabel.Name = "authorLabel";
+            this.authorLabel.Size = new System.Drawing.Size(38, 13);
+            this.authorLabel.TabIndex = 4;
+            this.authorLabel.Text = "Author";
             // 
             // descriptionRichTextBox
             // 
@@ -272,9 +275,10 @@ namespace SimpleSnippetGenerator
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.insertHereLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Simple snippet creator for SQLServer";
+            this.Text = "Snippet creator for Microsoft SQL Server";
             this.Load += new System.EventHandler(this.Form_Load);
             this.snippetTypeGroupBox.ResumeLayout(false);
             this.snippetTypeGroupBox.PerformLayout();
@@ -297,7 +301,7 @@ namespace SimpleSnippetGenerator
         private System.Windows.Forms.GroupBox snippetTypeGroupBox;
         private System.Windows.Forms.GroupBox snippetDetailsGroupBox;
         private System.Windows.Forms.TextBox authorTextBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label authorLabel;
         private System.Windows.Forms.RichTextBox descriptionRichTextBox;
         private System.Windows.Forms.Label descriptionLabel;
         private System.Windows.Forms.TextBox titleTextBox;
@@ -308,6 +312,7 @@ namespace SimpleSnippetGenerator
         private System.Windows.Forms.CheckBox lineNumberCheckBox;
         private System.Windows.Forms.Label fontLabel;
         private System.Windows.Forms.NumericUpDown fontSizeNumericUpDown;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

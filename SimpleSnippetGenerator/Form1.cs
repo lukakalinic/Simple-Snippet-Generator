@@ -142,6 +142,21 @@ namespace SimpleSnippetGenerator
 
         private void Form_Load(object sender, EventArgs e)
         {
+            // Set up the delays for the ToolTip.
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 1000;
+            toolTip.ReshowDelay = 500;
+            toolTip.ShowAlways = true;
+
+            // Force the ToolTip text to be displayed whether or not the form is active.
+            toolTip.SetToolTip(expansionSnippetRadioButton, "Expansion – offering the insertion of a code block into whatever location you put the cursor within a query window.");
+            toolTip.SetToolTip(surroundWithRadioButton, "SurroundsWith – as the name suggests this will encapsulate code you have highlighted within a query window adding top and tail code blocks from the snippet.");
+            toolTip.SetToolTip(titleLabel, "Title displays the name of the snippet in the Code Snippets Manager windows and in the Insert Snippet context menu.");
+            toolTip.SetToolTip(authorLabel, "The snippet’s author name.");
+            toolTip.SetToolTip(descriptionLabel, "Description describes the purpose of the snippet, it is also displayed in the Code Snippets Manager window, and also shows as a tooltip when inserting a SQL snippet in the query window.");
+            toolTip.SetToolTip(lineNumberCheckBox, "If checked then line numbers will be showed.");
+
+            //Setting scintillaBox appearence
             scintillaBox.IndentationGuides = IndentView.LookBoth;
             scintillaBox.Styles[Style.BraceLight].BackColor = Color.LightGray;
             scintillaBox.Styles[Style.BraceLight].ForeColor = Color.BlueViolet;
